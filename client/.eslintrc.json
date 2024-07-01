@@ -1,0 +1,110 @@
+// {
+//   "env": {
+//     "browser": true,
+//     "commonjs": true,
+//     "es6": true,
+//     "node": true
+//   },
+//   "parser": "babel-eslint",
+//   "extends": [
+//     "eslint:recommended",
+//     "airbnb",
+//     "airbnb/hooks",
+//     "plugin:react/recommended",
+//     "plugin:import/errors",
+//     "plugin:import/warnings",
+//     "plugin:jsx-a11y/recommended",
+//     "plugin:react-hooks/recommended",
+//     // always put prettier at last
+//     "prettier"
+//   ],
+//   "globals": {
+//     "Atomics": "readonly",
+//     "SharedArrayBuffer": "readonly"
+//   },
+//   "parserOptions": {
+//     "ecmaFeatures": {
+//       "jsx": true // enable linting for jsx files
+//     },
+//     "ecmaVersion": 11,
+//     "sourceType": "module"
+//   },
+//   "settings": {
+//     "react": {
+//       "version": "detect"
+//     }
+//   },
+//   "plugins": ["react", "react-hooks"],
+//   "rules": {
+//     // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
+//     "react/react-in-jsx- scope": "off",
+//     // NextJs specific fix: allow jsx syntax in js files
+//     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], //should add ".ts" if typescript project
+//     "react/display-name": 1,
+
+//     "react/prop-types": 0,
+//     "no-prototype-builtins": 0,
+//     "react/no-unescaped-entities": 1,
+//     "no-extra-boolean-cast": 1,
+//     "no-inner-declarations": 1,
+//     "no-mixed-spaces-and-tabs": 0
+//   },
+//   "overrides": [
+//     {
+//       "files": ["*.js", "*.jsx"]
+//     },
+//     {
+//       "files": ["*.ts", "*.tsx"],
+//       "rules": {
+//         // explicit should be "error"
+//         "@typescript-eslint/explicit-module-boundary-types": "off",
+//         "@typescript-eslint/explicit-function-return-type": "off",
+//         // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
+//         "react/react-in-jsx- scope": "off",
+//         // NextJs specific fix: allow jsx syntax in js files
+//         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], //should add ".ts" if typescript project
+//         "react/display-name": 1,
+
+//         "react/prop-types": 0,
+//         "no-prototype-builtins": 0,
+//         "react/no-unescaped-entities": 1,
+//         "no-extra-boolean-cast": 1,
+//         "no-inner-declarations": 1,
+//         "no-mixed-spaces-and-tabs": 0,
+//         "prettier/prettier": 0
+//       }
+//     }
+//   ]
+// }
+
+// .eslintrc.json
+{
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "myCustomGlobal": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "no-prototype-builtins": 0,
+    // "react/no-unescaped-entities": 1,
+    "no-extra-boolean-cast": 1,
+    "no-inner-declarations": 1,
+    "no-mixed-spaces-and-tabs": 0,
+    "no-unused-vars": "warn",
+    "no-undef": "error",
+    "react/no-unescaped-entities": "off", // for comments on top
+    "@next/next/no-page-custom-font": "off",
+    "prettier/prettier": 0
+  }
+}
